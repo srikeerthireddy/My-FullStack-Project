@@ -3,7 +3,7 @@ const mongoose=require('mongoose');
 const connectDB=require('./config/db');
 connectDB();
 const port=4004;
-
+const {cricketRoute}=require('./Routes');
 const app=express();
 
 app.use(express.json());
@@ -17,7 +17,8 @@ app.post('/',(req,res)=>{
             database:mongoose.connection.readyState===1?'connected':'disconnected'
         })
     })
-    
+    //routes
+    app.use("/api",cricketRoute);
     app.listen(port,()=>{
         console.log(`Server is running on port ${port}`);
     })
