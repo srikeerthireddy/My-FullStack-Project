@@ -19,7 +19,7 @@ cricketRoute.get("/read",async(req,res)=>{
         const prod=await CricketModel.find();
         res.status(200).send({msg:"Data recieved"});
     }catch(error){
-       res.status(500).json({errMsg:"Indvlaid get request",error});
+       res.status(500).json({errMsg:"Invalid get request",error});
     }   
 });
 
