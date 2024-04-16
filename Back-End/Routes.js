@@ -17,7 +17,7 @@ cricketRoute.post("/create", async(req,res)=>{
 cricketRoute.get("/read",async(req,res)=>{
     try{
         const prod=await CricketModel.find();
-        res.status(200).send({msg:"Data recieved"});
+        res.status(200).send({msg:"Data recieved",data:prod});
     }catch(error){
        res.status(500).json({errMsg:"Invalid get request",error});
     }   
