@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Routes,Route,Link}from 'react-router-dom';
 import EntityDisplay from './components/EntityDisplay';
 import RenderEntities from './components/RenderEntities';
 import InsertEntity from './components/InsertEntity';
+import UpdateEntity from './components/UpdateEntity';
  const App=()=>{
     const dummyEntity={
         name:"MS.Dhoni",
@@ -31,6 +32,7 @@ import InsertEntity from './components/InsertEntity';
        <Route path='/entity' element={<EntityDisplay {...dummyEntity}/>}/> 
       <Route path='add-entity' element={<InsertEntity/>} />
        <Route path='/render-entity' element={<RenderEntities/>}/>
+       <Route path='/update/:id' element={<UpdateEntity/>}/>
         </Routes>
        
        </div>
